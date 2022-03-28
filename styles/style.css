@@ -34,12 +34,14 @@
     color: #fff;
     margin: 1rem;
     user-select: none;
+    z-index: 999;
 }
 
 .navigation {
     position: fixed;
     right: 0;
     margin: 1rem;
+    z-index: 999;
 }
 
 .navigation__items {
@@ -63,6 +65,7 @@
     bottom: 0;
     margin: 1rem;
     transition: opacity .3s ease-in, transform .5s ease;
+    z-index: 999;
 }
 
 .socials__items {
@@ -131,6 +134,7 @@
     -webkit-font-smoothing: antialiased;
     border-top: #fff solid 2px;
     padding: 1.5rem 0;
+    transition: opacity .3s ease-in, transform .5s ease;
 }
 
 .projects__item:last-child {
@@ -158,6 +162,11 @@ footer {
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity .3s ease-in, transform .5s ease;
+}
+
+span {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 @media only screen and (max-width: 600px) {
