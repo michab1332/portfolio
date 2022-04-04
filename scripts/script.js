@@ -43,7 +43,7 @@
 
     //observer start
     const text = about.children[0].innerText
-    const spanedText = text.split(" ").map(word => (`<span>${word}</span>`));
+    const spanedText = text.split(" ").map(word => (`<span class="about__word">${word}</span>`));
     about.children[0].innerHTML = spanedText.join(" ")
 
     const observerAbout = new IntersectionObserver(entries => {
@@ -99,4 +99,5 @@
         const scrollY = getScrollYElement(item.innerText)
         item.addEventListener("click", () => window.scrollTo(0, scrollY - 100))
     })
+
 })()

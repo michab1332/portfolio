@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
 :root {
     --goblin-one: Goblin One, cursive;
     --playfair-display: Playfair Display, serif;
+    --rubik-mono-one: Rubik Mono One, sans-serif;
 }
 
 * {
@@ -24,8 +27,8 @@
     color: #fff;
     font-size: 5rem;
     font-weight: bold;
-    font-family: var(--playfair-display);
-    letter-spacing: .1rem;
+    font-family: var(--rubik-mono-one);
+    letter-spacing: .4rem;
 }
 
 .logoText {
@@ -129,8 +132,8 @@
     width: 100%;
     color: #080808;
     font-size: 5rem;
-    text-shadow: transparent 0px 0px 1px,   #fff 0px 0px 2px,   #fff 0px 0px 2px,
-             #fff 0px 0px 2px,   #fff 0px 0px 2px,   #fff 0px 0px 2px;
+    text-shadow: transparent 0px 0px 1px, #fff 0px 0px 2px, #fff 0px 0px 2px,
+        #fff 0px 0px 2px, #fff 0px 0px 2px, #fff 0px 0px 2px;
     -webkit-font-smoothing: antialiased;
     border-top: #fff solid 2px;
     padding: 1.5rem 0;
@@ -189,12 +192,16 @@ footer {
     background-color: #fff;
 }
 
-span {
+.about__word {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
 @media only screen and (max-width: 600px) {
+    .heroPage__textWrapper {
+        font-size: 2rem;
+    }
+
     .about__text {
         font-size: 2.5rem;
     }
