@@ -20,11 +20,12 @@ body {
 
 .cursor {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 10px;
     height: 10px;
     background-color: #ffffff;
     border-radius: 50%;
-    opacity: 0;
     transition: transform 0.2s ease, background-color .2s ease;
 }
 

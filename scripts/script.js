@@ -6,7 +6,6 @@
     const about = document.querySelector(".about")
     const projects = document.querySelectorAll(".projects__item")
     const footer = document.querySelector("footer")
-    const cursor = document.querySelector(".cursor")
     const titlesTab = ["please, comeback", "you look so pretty", "i need you", "you look really nice", "write to me;)"]
     let scrollY = 0
     let clientX = 0
@@ -94,26 +93,6 @@
         changeSocialsMenuPosition()
     })
 
-    window.addEventListener("mousemove", (e) => {
-        clientX = e.clientX
-        clientY = e.clientY
-
-        cursor.style.transform = `translateX(${clientX}px) translateY(${clientY + scrollY}px)`
-        cursor.style.opacity = 1
-    })
-
-    window.addEventListener("mousedown", () => {
-        cursor.style.transform = `translateX(${clientX}px) translateY(${clientY + scrollY}px) scale(3)`
-        cursor.style.border = "solid 0.5px #fff"
-        cursor.style.backgroundColor = "transparent"
-    })
-
-    window.addEventListener("mouseup", () => {
-        cursor.style.transform = `translateX(${clientX}px) translateY(${clientY + scrollY}px) scale(1)`
-        cursor.style.border = "none"
-        cursor.style.backgroundColor = "#fff"
-    })
-
     arrow.addEventListener("click", () => {
         scrollY > 600 ? window.scrollTo(0, 0) : window.scrollTo(0, about.offsetTop - 100)
     })
@@ -122,5 +101,10 @@
         const scrollY = getScrollYElement(item.innerText)
         item.addEventListener("click", () => window.scrollTo(0, scrollY - 100))
     })
+
+
+    //cursor class
+    const cursorClass = new Cursor("cursor");
+    cursorClass.build()
 
 })()
