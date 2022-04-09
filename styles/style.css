@@ -51,9 +51,32 @@ body {
 .heroPage__textWrapper {
     color: #fff;
     font-size: 5rem;
-    font-weight: bold;
     font-family: var(--rubik-mono-one);
     letter-spacing: .4rem;
+}
+
+.heroPage__textMin {
+    font-size: 1rem;
+    color: #d8d8d8;
+    margin-left: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.heroPage__textMin::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 5px;
+    background-color: #d8d8d8;
+    bottom: -5px;
+    opacity: 0;
+    left: 0;
+    transition: opacity .3s ease;
+}
+
+.heroPage__textMin:hover::before {
+    opacity: 1;
 }
 
 .logoText {
@@ -226,6 +249,14 @@ footer {
 @media only screen and (max-width: 600px) {
     .heroPage__textWrapper {
         font-size: 2rem;
+    }
+
+    .heroPage__textMin {
+        margin: 0;
+    }
+
+    .heroPage__textMin::before {
+        width: 100%;
     }
 
     .about__text {
