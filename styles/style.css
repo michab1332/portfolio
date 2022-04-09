@@ -24,9 +24,18 @@ body {
     left: 0;
     width: 10px;
     height: 10px;
-    background-color: #ffffff;
+    background-color: transparent;
+    backdrop-filter: invert(100%);
     border-radius: 50%;
-    transition: transform 0.2s ease, background-color .2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width .3s ease, height .3s ease, transform 0.1s ease, background-color .2s ease;
+}
+
+.cursor>p {
+    margin: 0 1rem;
+    user-select: none;
 }
 
 .heroPage {

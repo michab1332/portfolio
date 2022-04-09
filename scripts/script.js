@@ -4,6 +4,7 @@
     const socialsMenu = document.querySelector(".socials")
     const menu = document.querySelectorAll(".navigation__item")
     const about = document.querySelector(".about")
+    const projectsSection = document.querySelector(".projects")
     const projects = document.querySelectorAll(".projects__item")
     const footer = document.querySelector("footer")
     const titlesTab = ["please, comeback", "you look so pretty", "i need you", "you look really nice", "write to me;)"]
@@ -79,6 +80,29 @@
 
     projects.forEach(project => {
         observerProjects.observe(project)
+        project.addEventListener("mouseenter", () => {
+            customCursor.setHeight("50px")
+            customCursor.setWidth("150px")
+            customCursor.setBorderRadius("1rem")
+            customCursor.setScaleSize(1.2)
+            customCursor.setText(`Open ${project.innerText}`)
+        })
+    })
+
+    about.addEventListener("mouseenter", () => {
+        customCursor.setHeight("10px")
+        customCursor.setWidth("10px")
+        customCursor.setBorderRadius("50%")
+        customCursor.setScaleSize(3)
+        customCursor.setText("&nbsp")
+    })
+
+    footer.addEventListener("mouseenter", () => {
+        customCursor.setHeight("10px")
+        customCursor.setWidth("10px")
+        customCursor.setBorderRadius("50%")
+        customCursor.setScaleSize(3)
+        customCursor.setText("&nbsp")
     })
 
     //observer end
@@ -104,7 +128,15 @@
 
 
     //cursor class
-    const cursorClass = new Cursor("cursor");
-    cursorClass.build()
+    const nameOfCustomCursorClass = "cursor"
+    const customCursor = new Cursor(nameOfCustomCursorClass);
+    const onCursorDown = () => {
+        customCursor.setScale(3)
+    }
+    const onCursorUp = () => {
+        customCursor.setScale(1)
+    }
+    customCursor.build(onCursorDown, onCursorUp)
+
 
 })()
