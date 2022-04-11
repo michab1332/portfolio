@@ -41,11 +41,12 @@ body {
 .heroPage {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(180deg, #0038FF 0%, #080808 100%);
+    background-color: #080808;
     display: flex;
     align-items: center;
     justify-content: center;
     user-select: none;
+    position: relative;
 }
 
 .heroPage__textWrapper {
@@ -53,6 +54,7 @@ body {
     font-size: 5rem;
     font-family: var(--rubik-mono-one);
     letter-spacing: .4rem;
+    z-index: 3;
 }
 
 .heroPage__textMin {
@@ -61,6 +63,14 @@ body {
     margin-left: 5px;
     position: relative;
     width: 100%;
+}
+
+.heroPage__textMin>a {
+    text-decoration: none;
+}
+
+.heroPage__textMin>a:visited {
+    color: #d8d8d8;
 }
 
 .heroPage__textMin::before {
@@ -77,6 +87,30 @@ body {
 
 .heroPage__textMin:hover::before {
     opacity: 1;
+}
+
+.rectangle {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 40%;
+    height: 300px;
+    background-color: #0038FF;
+    z-index: 1;
+    filter: blur(30px);
+    opacity: .5;
+}
+
+.rectangle--grey {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 40%;
+    height: 300px;
+    background-color: #4a4a4a;
+    z-index: 1;
+    filter: blur(30px);
+    opacity: .5;
 }
 
 .logoText {

@@ -2,15 +2,13 @@
     //variables
     const arrow = document.querySelector(".arrow")
     const socialsMenu = document.querySelector(".socials")
+    const heroPage = document.querySelector(".heroPage")
     const menu = document.querySelectorAll(".navigation__item")
     const about = document.querySelector(".about")
-    const projectsSection = document.querySelector(".projects")
     const projects = document.querySelectorAll(".projects__item")
     const footer = document.querySelector("footer")
     const titlesTab = ["please, comeback", "you look so pretty", "i need you", "you look really nice", "write to me;)"]
     let scrollY = 0
-    let clientX = 0
-    let clientY = 0
 
     //changing title
     const changeTitle = () => {
@@ -89,21 +87,19 @@
         })
     })
 
-    about.addEventListener("mouseenter", () => {
+    const resetCustomCursor = () => {
         customCursor.setHeight("10px")
         customCursor.setWidth("10px")
         customCursor.setBorderRadius("50%")
         customCursor.setScaleSize(3)
         customCursor.setText("&nbsp")
-    })
+    }
 
-    footer.addEventListener("mouseenter", () => {
-        customCursor.setHeight("10px")
-        customCursor.setWidth("10px")
-        customCursor.setBorderRadius("50%")
-        customCursor.setScaleSize(3)
-        customCursor.setText("&nbsp")
-    })
+    heroPage.addEventListener("mouseenter", resetCustomCursor)
+
+    about.addEventListener("mouseenter", resetCustomCursor)
+
+    footer.addEventListener("mouseenter", resetCustomCursor)
 
     //observer end
 
