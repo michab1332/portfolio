@@ -64,6 +64,10 @@ class Cursor {
         })
     }
 
+    destory() {
+        document.body.removeChild(this.cursor)
+    }
+
     build(onCursorDown, onCursorUp) {
         this.cursor = document.createElement("div")
         this.p = document.createElement("p")

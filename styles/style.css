@@ -14,6 +14,14 @@
     cursor: none;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #fff
+}
+
 body {
     overflow-x: hidden;
 }
@@ -26,16 +34,32 @@ body {
     height: 10px;
     background-color: transparent;
     backdrop-filter: invert(100%);
+    pointer-events: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: width .3s ease, height .3s ease, transform 0.1s ease, background-color .2s ease;
+    z-index: 999;
+}
+
+.--active::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    animation: cursorActive 3s;
+    animation-iteration-count: infinite;
 }
 
 .cursor>p {
     margin: 0 1rem;
     user-select: none;
+    font-size: .6rem;
+    font-family: var(--rubik-mono-one);
 }
 
 .heroPage {
@@ -93,8 +117,8 @@ body {
     position: absolute;
     top: 10%;
     right: 10%;
-    width: 40%;
-    height: 300px;
+    width: 10%;
+    height: 80%;
     background-color: #0038FF;
     z-index: 1;
     filter: blur(30px);
@@ -105,8 +129,8 @@ body {
     position: absolute;
     bottom: 10%;
     left: 10%;
-    width: 40%;
-    height: 300px;
+    width: 10%;
+    height: 80%;
     background-color: #4a4a4a;
     z-index: 1;
     filter: blur(30px);
@@ -226,7 +250,7 @@ body {
 footer {
     min-height: 20vh;
     width: 100%;
-    background: linear-gradient(180deg, #080808 50%, #0038FF 100%);
+    background: linear-gradient(180deg, #080808 50%, #001f90 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -316,5 +340,26 @@ footer {
     .about__text {
         font-size: 6rem;
         margin-right: 1rem;
+    }
+}
+
+@keyframes cursorActive {
+    0% {
+        transform: scale(1);
+        opacity: .2;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: .1;
     }
 }

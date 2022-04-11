@@ -10,7 +10,6 @@
     const titlesTab = ["please, comeback", "you look so pretty", "i need you", "you look really nice", "write to me;)"]
     let scrollY = 0
 
-    //changing title
     const changeTitle = () => {
         const randTitle = Math.ceil(Math.random() * titlesTab.length)
         let isPageActive = !document.hidden
@@ -40,6 +39,14 @@
     const getScrollYElement = (name) => {
         const item = document.querySelector(`.${name.toLowerCase()}`)
         return item.offsetTop
+    }
+
+    const resetCustomCursor = () => {
+        customCursor.setHeight("10px")
+        customCursor.setWidth("10px")
+        customCursor.setScaleSize(3)
+        customCursor.setText("&nbsp")
+        customCursor.removeClass('--active')
     }
 
     //observer start
@@ -79,27 +86,13 @@
     projects.forEach(project => {
         observerProjects.observe(project)
         project.addEventListener("mouseenter", () => {
-            customCursor.setHeight("50px")
-            customCursor.setWidth("150px")
-            customCursor.setBorderRadius("1rem")
+            customCursor.setHeight("100px")
+            customCursor.setWidth("100px")
             customCursor.setScaleSize(1.2)
             customCursor.setText(`Open ${project.innerText}`)
+            customCursor.addClass('--active')
         })
     })
-
-    const resetCustomCursor = () => {
-        customCursor.setHeight("10px")
-        customCursor.setWidth("10px")
-        customCursor.setBorderRadius("50%")
-        customCursor.setScaleSize(3)
-        customCursor.setText("&nbsp")
-    }
-
-    heroPage.addEventListener("mouseenter", resetCustomCursor)
-
-    about.addEventListener("mouseenter", resetCustomCursor)
-
-    footer.addEventListener("mouseenter", resetCustomCursor)
 
     //observer end
 
@@ -126,13 +119,23 @@
     //cursor class
     const nameOfCustomCursorClass = "cursor"
     const customCursor = new Cursor(nameOfCustomCursorClass);
+
+    heroPage.addEventListener("mouseenter", resetCustomCursor)
+
+    about.addEventListener("mouseenter", resetCustomCursor)
+
+    footer.addEventListener("mouseenter", resetCustomCursor)
+
     const onCursorDown = () => {
-        customCursor.setScale(3)
+        customCursor.setScale(2)
     }
     const onCursorUp = () => {
         customCursor.setScale(1)
     }
     customCursor.build(onCursorDown, onCursorUp)
 
+    if (window.innerWidth < 600) {
+        customCursor.destory()
+    }
 
 })()
