@@ -3,7 +3,9 @@
 :root {
     --rubik-mono-one: Rubik Mono One, sans-serif;
     --montserrat: Montserrat, sans-serif;
-    ;
+    --blue: #5863F8;
+    --black: #000000;
+    --white: #FFF9FB;
 }
 
 * {
@@ -19,7 +21,7 @@ a {
 }
 
 a:visited {
-    color: #fff
+    color: var(--white);
 }
 
 body {
@@ -41,6 +43,7 @@ body {
     justify-content: center;
     transition: width .3s ease, height .3s ease, transform 0.1s ease, background-color .2s ease;
     z-index: 999;
+    box-shadow: 0 0 1rem rgb(255, 255, 255);
 }
 
 .--active::after {
@@ -51,6 +54,7 @@ body {
     border: 3px solid #fff;
     border-radius: 50%;
     position: absolute;
+    box-shadow: 0 0 1em rgba(255, 255, 255, 0.526);
     animation: cursorActive 3s;
     animation-iteration-count: infinite;
 }
@@ -65,7 +69,7 @@ body {
 .heroPage {
     width: 100%;
     height: 100vh;
-    background-color: #080808;
+    background-color: var(--black);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,7 +78,7 @@ body {
 }
 
 .heroPage__textWrapper {
-    color: #fff;
+    color: var(--white);
     font-size: 5rem;
     font-family: var(--rubik-mono-one);
     letter-spacing: .4rem;
@@ -83,7 +87,7 @@ body {
 
 .heroPage__textMin {
     font-size: 1rem;
-    color: #d8d8d8;
+    color: var(--blue);
     margin-left: 5px;
     position: relative;
     width: 100%;
@@ -94,15 +98,15 @@ body {
 }
 
 .heroPage__textMin>a:visited {
-    color: #d8d8d8;
+    color: var(--blue);
 }
 
 .heroPage__textMin::before {
     content: "";
     position: absolute;
     width: 50%;
-    height: 5px;
-    background-color: #d8d8d8;
+    height: 3px;
+    background-color: var(--blue);
     bottom: -5px;
     opacity: 0;
     left: 0;
@@ -119,7 +123,7 @@ body {
     right: 10%;
     width: 10%;
     height: 80%;
-    background-color: #0038FF;
+    background-color: var(--blue);
     z-index: 1;
     filter: blur(30px);
     opacity: .5;
@@ -142,7 +146,7 @@ body {
     font-family: var(--montserrat);
     font-weight: 900;
     letter-spacing: 2px;
-    color: #fff;
+    color: var(--white);
     margin: 1rem;
     user-select: none;
     z-index: 999;
@@ -156,7 +160,7 @@ body {
 }
 
 .navigation__items {
-    color: #fff;
+    color: var(--white);
     font-family: var(--montserrat);
     font-weight: 900;
     letter-spacing: 1px;
@@ -181,7 +185,7 @@ body {
 }
 
 .socials__items {
-    color: #fff;
+    color: var(--white);
     font-family: var(--montserrat);
     font-weight: 900;
     letter-spacing: 1px;
@@ -209,13 +213,13 @@ body {
 .about {
     width: 100%;
     min-height: 60vh;
-    background-color: #080808;
+    background-color: var(--black);
     display: flex;
     justify-content: center;
 }
 
 .about__text {
-    color: #fff;
+    color: var(--white);
     font-family: var(--montserrat);
     font-weight: 900;
     letter-spacing: 2px;
@@ -227,7 +231,7 @@ body {
 .projects {
     width: 100%;
     height: 100vh;
-    background-color: #080808;
+    background-color: var(--black);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -267,7 +271,7 @@ body {
 footer {
     min-height: 20vh;
     width: 100%;
-    background: linear-gradient(180deg, #080808 50%, #001f90 100%);
+    background: linear-gradient(180deg, var(--black) 50%, var(--blue) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -281,7 +285,7 @@ footer {
     width: 80%;
     display: flex;
     justify-content: space-between;
-    color: #fff;
+    color: var(--white);
     list-style: none;
     user-select: none;
     opacity: 0;
@@ -306,7 +310,7 @@ footer {
     bottom: 0;
     transform: translateX(-50%);
     position: absolute;
-    background-color: #0038FF;
+    background-color: var(--blue);
     z-index: -1;
     opacity: 0;
     transition: transform .5s ease-in-out, opacity .3s ease-in, background-color .3s ease-in;
@@ -315,7 +319,7 @@ footer {
 .footer__item:hover::before {
     opacity: 1;
     transform: translate(-50%) translateY(-100%);
-    background-color: #fff;
+    background-color: var(--white);
 }
 
 .about__word {
