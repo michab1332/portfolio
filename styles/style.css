@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 :root {
-    --goblin-one: Goblin One, cursive;
-    --playfair-display: Playfair Display, serif;
     --rubik-mono-one: Rubik Mono One, sans-serif;
+    --montserrat: Montserrat, sans-serif;
+    ;
 }
 
 * {
@@ -139,7 +139,9 @@ body {
 
 .logoText {
     position: fixed;
-    font-family: var(--goblin-one);
+    font-family: var(--montserrat);
+    font-weight: 900;
+    letter-spacing: 2px;
     color: #fff;
     margin: 1rem;
     user-select: none;
@@ -155,7 +157,9 @@ body {
 
 .navigation__items {
     color: #fff;
-    font-family: var(--goblin-one);
+    font-family: var(--montserrat);
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
 .navigation__item {
@@ -178,7 +182,9 @@ body {
 
 .socials__items {
     color: #fff;
-    font-family: var(--goblin-one);
+    font-family: var(--montserrat);
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
 .socials__item {
@@ -202,7 +208,7 @@ body {
 
 .about {
     width: 100%;
-    min-height: 100vh;
+    min-height: 60vh;
     background-color: #080808;
     display: flex;
     justify-content: center;
@@ -210,7 +216,9 @@ body {
 
 .about__text {
     color: #fff;
-    font-family: var(--goblin-one);
+    font-family: var(--montserrat);
+    font-weight: 900;
+    letter-spacing: 2px;
     font-size: 4rem;
     width: 90%;
     user-select: none;
@@ -226,7 +234,9 @@ body {
 }
 
 .projects__items {
-    font-family: var(--goblin-one);
+    font-family: var(--montserrat);
+    font-weight: 900;
+    letter-spacing: 2px;
     list-style: none;
     width: 90%;
 }
@@ -261,6 +271,10 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: var(--montserrat);
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 4rem;
 }
 
 .footer__items {
@@ -270,8 +284,6 @@ footer {
     color: #fff;
     list-style: none;
     user-select: none;
-    font-family: var(--playfair-display);
-    font-size: 4rem;
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity .3s ease-in, transform .5s ease;
@@ -333,7 +345,7 @@ footer {
     }
 
     .footer__items {
-        font-size: 4rem;
+        font-size: 3rem;
         flex-direction: column;
         margin: auto 0;
     }
