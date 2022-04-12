@@ -3,6 +3,7 @@
     const arrow = document.querySelector(".arrow")
     const socialsMenu = document.querySelector(".socials")
     const heroPage = document.querySelector(".heroPage")
+    const heroPageMinText = document.querySelector(".heroPage__textMin")
     const menu = document.querySelectorAll(".navigation__item")
     const about = document.querySelector(".about")
     const projects = document.querySelectorAll(".projects__item")
@@ -92,6 +93,9 @@
             customCursor.setText(`Open ${project.innerText}`)
             customCursor.addClass('--active')
         })
+        project.addEventListener("mouseleave", () => {
+            resetCustomCursor()
+        })
     })
 
     //observer end
@@ -120,11 +124,13 @@
     const nameOfCustomCursorClass = "cursor"
     const customCursor = new Cursor(nameOfCustomCursorClass);
 
-    heroPage.addEventListener("mouseenter", resetCustomCursor)
+    heroPageMinText.addEventListener("mouseenter", () => {
+        customCursor.addClass("--blue")
+    })
 
-    about.addEventListener("mouseenter", resetCustomCursor)
-
-    footer.addEventListener("mouseenter", resetCustomCursor)
+    heroPageMinText.addEventListener("mouseleave", () => {
+        customCursor.removeClass("--blue")
+    })
 
     const onCursorDown = () => {
         customCursor.setScale(2)
