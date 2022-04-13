@@ -87,6 +87,15 @@ body {
     font-family: var(--rubik-mono-one);
     letter-spacing: .4rem;
     z-index: 3;
+    opacity: 0;
+    transform: translateY(-10rem);
+    transition: opacity 2s ease, transform 1s ease;
+}
+
+.heroPage__fenzeIcon {
+    position: absolute;
+    width: 10rem;
+    transition: opacity .5s ease, transform 1s ease;
 }
 
 .heroPage__textMin {
@@ -131,6 +140,7 @@ body {
     z-index: 1;
     filter: blur(30px);
     opacity: .5;
+    animation: onLoadRect 1.5s;
 }
 
 .rectangle--grey {
@@ -143,6 +153,7 @@ body {
     z-index: 1;
     filter: blur(30px);
     opacity: .5;
+    animation: onLoadRect 1.5s;
 }
 
 .logoText {
@@ -389,5 +400,20 @@ footer {
     100% {
         transform: scale(1);
         opacity: .1;
+    }
+}
+
+@keyframes onLoadRect {
+    0% {
+        opacity: 1;
+        transform: scaleX(3);
+    }
+
+    50% {
+        opacity: .75;
+    }
+
+    100% {
+        opacity: .5;
     }
 }

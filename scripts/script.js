@@ -2,8 +2,9 @@
     //variables
     const arrow = document.querySelector(".arrow")
     const socialsMenu = document.querySelector(".socials")
-    const heroPage = document.querySelector(".heroPage")
+    const heroPageText = document.querySelector(".heroPage__textWrapper")
     const heroPageMinText = document.querySelector(".heroPage__textMin")
+    const heroPageFenzeIcon = document.querySelector(".heroPage__fenzeIcon")
     const menu = document.querySelectorAll(".navigation__item")
     const about = document.querySelector(".about")
     const projects = document.querySelectorAll(".projects__item")
@@ -48,6 +49,21 @@
         customCursor.setScaleSize(3)
         customCursor.setText("&nbsp")
         customCursor.removeClass('--active')
+    }
+
+    const sleep = (delay) => {
+        return new Promise(resolve => {
+            setTimeout(resolve, delay)
+        })
+    }
+
+    const loadAnimation = async () => {
+        await sleep(1000)
+        heroPageText.style.opacity = 1
+        heroPageText.style.transform = "translateY(0)"
+        heroPageFenzeIcon.style.opacity = 0
+        heroPageFenzeIcon.style.transform = "translateY(-10rem)"
+
     }
 
     //observer start
@@ -119,6 +135,7 @@
         item.addEventListener("click", () => window.scrollTo(0, scrollY - 100))
     })
 
+    loadAnimation()
 
     //cursor class
     const nameOfCustomCursorClass = "cursor"
