@@ -204,6 +204,7 @@ body {
     list-style: none;
     margin-bottom: .5rem;
     transition: transform .1s ease-in;
+    user-select: none;
 }
 
 .navigation__item:hover {
