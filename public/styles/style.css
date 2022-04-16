@@ -129,6 +129,10 @@ body {
     color: var(--blue);
 }
 
+.heroPage__textMin>a:link {
+    color: var(--blue);
+}
+
 .heroPage__textMin::before {
     content: "";
     position: absolute;
@@ -222,9 +226,14 @@ body {
 }
 
 .socials__item {
+    user-select: none;
     list-style: none;
     margin-top: .5rem;
     transition: transform .1s ease-in;
+}
+
+.socials__item>a:link {
+    color: var(--white);
 }
 
 .socials__item:hover {
@@ -326,6 +335,10 @@ footer {
 .footer__item {
     position: relative;
     transition: transform .3s ease-in-out;
+}
+
+.footer__item>a:link {
+    color: var(--white);
 }
 
 .footer__item:hover {
