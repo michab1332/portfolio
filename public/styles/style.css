@@ -184,6 +184,10 @@ body {
     margin: 1rem;
     user-select: none;
     z-index: 999;
+
+    backdrop-filter: blur(.5rem);
+    border-radius: .5rem;
+    padding: .3rem;
 }
 
 .navigation {
@@ -191,6 +195,10 @@ body {
     right: 0;
     margin: 1rem;
     z-index: 999;
+
+    backdrop-filter: blur(.5rem);
+    border-radius: .5rem;
+    padding: .3rem;
 }
 
 .navigation__items {
@@ -217,6 +225,10 @@ body {
     margin: 1rem;
     transition: opacity .3s ease-in, transform .5s ease;
     z-index: 999;
+
+    backdrop-filter: blur(.5rem);
+    border-radius: .5rem;
+    padding: .3rem;
 }
 
 .socials__items {
