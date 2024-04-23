@@ -23,7 +23,7 @@
     }
 
     const changeSocialsMenuPosition = () => {
-        const height = footer.offsetTop - 650
+        const height = footer.offsetTop - 900
 
         if (scrollY > height) {
             socialsMenu.style.opacity = 0
